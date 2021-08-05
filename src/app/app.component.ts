@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {FetcherService} from "./services/fetcher.service";
 
@@ -19,15 +19,16 @@ export class AppComponent implements OnInit {
   citiesName = ['hadera', 'herzlia', 'ashkelon', 'ashdod', 'yavne'];
   tempOfUser: any;
   curCityName: any;
-  cityResult: object = {};
+  cityResult: any;
   results: Result[] = [];
   curIndex: number = 0;
-  // finalGame: boolean = false;
-  summerOfGame: any;
+  finalGame: boolean = false;
+  summerOfGame: any = 'as';
 
 
   constructor(private loader: NgxUiLoaderService,
-              private fetcherService: FetcherService) {
+              private fetcherService: FetcherService,
+              private cd: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -51,13 +52,12 @@ export class AppComponent implements OnInit {
       correctAnswer: correctAnswer
     }
     this.results.push(result);
+    this.cd.markForCheck();
     this.curIndex = this.curIndex + 1;
     this.curCityName = this.citiesName[this.curIndex];
     if(this.curIndex === this.citiesName.length){
-     // this.finalGame = true;
-      this.summerOfGame = this.results.filter(res => res.correctAnswer).length > 2 ? 'winner' : 'tryAgin..'
-
+      this.finalGame = true;
+      this.summerOfGame = this.results.filter(res => res.correctAnswer).length > 2 ? 'Winner' : 'Try more..'
     }
-
   }
 }

@@ -1,5 +1,5 @@
 <ngx-ui-loader [fgsType]="'square-jelly-box'" [loaderId]="'01'"></ngx-ui-loader>
-<div class="container">
+<div *ngIf="!finalGame" class="container">
   <div class="city-card">
     <div class="city-Name">City Name: {{this.curCityName}}</div>
     <input type="number" [(ngModel)]="this.tempOfUser">
@@ -11,7 +11,7 @@
       <div> rightTemp: {{res.rightTemp}} </div>
     </div>
   </div>
-  <div>
+  <div *ngIf="finalGame">
     {{summerOfGame}}
   </div>
 </div>
