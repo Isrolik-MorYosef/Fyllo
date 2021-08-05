@@ -10,10 +10,11 @@ export class FetcherService {
   constructor(protected httpClient: HttpClient) { }
 
   getMarkers(cityName: string): Observable<object> {
-    return this.httpClient.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${this.token}`);
+    return this.httpClient.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${this.token}`);
   }
 
-  checkIsSuccsses(tempOfUser: number, temp: number) : boolean{
-      return tempOfUser > temp-5 && tempOfUser < temp+5
+  checkIsSuccess(tempOfUser: number, temp: number): boolean {
+      return tempOfUser > temp-5 && tempOfUser < temp+5;
   }
 }
