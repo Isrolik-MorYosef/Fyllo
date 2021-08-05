@@ -1,0 +1,17 @@
+<ngx-ui-loader [fgsType]="'square-jelly-box'" [loaderId]="'01'"></ngx-ui-loader>
+<div class="container">
+  <div class="city-card">
+    <div class="city-Name">City Name: {{this.curCityName}}</div>
+    <input type="number" [(ngModel)]="this.tempOfUser">
+    <button (click)="this.checkTemp()">Check</button>
+  </div>
+  <div class="result">
+    <div *ngFor="let res of this.results">
+      <div> userTemp: {{res.userTemp}} </div>
+      <div> rightTemp: {{res.rightTemp}} </div>
+    </div>
+  </div>
+  <div>
+    {{summerOfGame}}
+  </div>
+</div>
