@@ -1,9 +1,8 @@
-import {AfterViewInit, ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {FetcherService} from "./services/fetcher.service";
-import {BehaviorSubject, Observable, Subject} from "rxjs";
-import {debounce, debounceTime, pluck, tap} from "rxjs/operators";
-import {WeatherData} from "./interfaces/weatherData";
+import {BehaviorSubject} from "rxjs";
+import {pluck} from "rxjs/operators";
 import {AppState} from "./store/state/app.state";
 import {select, Store} from "@ngrx/store";
 
@@ -13,11 +12,7 @@ import {select, Store} from "@ngrx/store";
   styleUrls: ['./app.component.css']
 })
 
-
 export class AppComponent implements OnInit {
-  tempOfUser: any;
-  curCityName: any;
-  cityResult: any = {};
   finalGame: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private loader: NgxUiLoaderService,

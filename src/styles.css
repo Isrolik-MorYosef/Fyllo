@@ -1,8 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
 body {
-  background: url("assets/img/rainbow-beautiful-green-yellow-field-cloudy-sky.jpg") no-repeat center center fixed;
-  background-size: cover;
-  background-blend-mode: darken;
+  background: #ffd38f;
 }
 
 .btn {

@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 
 @Injectable()
 export class FetcherService {
-  token = '7df3f2edb1590af434e645afad8aea72'
+  token = '7df3f2edb1590af434e645afad8aea72';
 
   constructor(protected httpClient: HttpClient) { }
 

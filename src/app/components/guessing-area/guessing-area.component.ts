@@ -33,18 +33,18 @@ export class GuessingAreaComponent implements OnInit {
       let weatherData: WeatherData;
       this.fetcherService.getWeather(this.curCityName).pipe(take(1))
         .subscribe((data: object) => {
-        this.cityResult = data;
-        const correctAnswer: boolean = this.fetcherService.checkIsSuccess(Number(this.tempOfUser), this.cityResult.main.temp);
-        weatherData = {
-          city: this.curCityName,
-          rightTemp: this.cityResult.main.temp,
-          userTemp: Number(this.tempOfUser),
-          correctAnswer: correctAnswer
-        }
-        this.store.dispatch(addGuess({weather: weatherData}));
-        this.store.dispatch(indexOfGame());
-        this.tempOfUser = ''
-      })
+          this.cityResult = data;
+          const correctAnswer: boolean = this.fetcherService.checkIsSuccess(Number(this.tempOfUser), this.cityResult.main.temp);
+          weatherData = {
+            city: this.curCityName,
+            rightTemp: this.cityResult.main.temp,
+            userTemp: Number(this.tempOfUser),
+            correctAnswer: correctAnswer
+          }
+          this.store.dispatch(addGuess({weather: weatherData}));
+          this.store.dispatch(indexOfGame());
+          this.tempOfUser = ''
+        })
     }
   }
 }

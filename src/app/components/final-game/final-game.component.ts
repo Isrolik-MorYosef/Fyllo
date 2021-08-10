@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import {AppState} from "../../store/state/app.state";
 import {pluck} from "rxjs/operators";
@@ -11,11 +11,13 @@ import {pluck} from "rxjs/operators";
 export class FinalGameComponent implements OnInit {
   summaryOfGame: string;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>) {
+  }
 
   ngOnInit(): void {
-    this.store.pipe(select('guess'), pluck('guess')).subscribe((data:any) => {
-      this.summaryOfGame = data.filter((res: any) => res.correctAnswer).length > 2 ? 'Winner' : 'You lost..'
+    this.store.pipe(select('guess'), pluck('guess')).subscribe((data: any) => {
+      this.summaryOfGame = data.filter((res: any) => res.correctAnswer).length > 2
+        ? 'Winner' : 'You lost..'
     })
   }
 
