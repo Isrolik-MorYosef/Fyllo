@@ -1,0 +1,28 @@
+.result-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 150px !important;
+  margin: auto;
+  background-color: #ffffff75;
+  border-radius: 10px;
+  justify-content: center;
+  width: fit-content;
+}
+
+.fail {
+  color: #a92323;
+  background-color: #ffc7c7;
+}
+.correct {
+  color: #2e7c2e;
+  background-color: #b9ffc7;
+}
+
+.res{
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: #ffffff 2px solid;
+  box-shadow: 0px 0px 13px -3px #282828;
+}
+

@@ -1,18 +1,9 @@
 <ngx-ui-loader [fgsType]="'square-jelly-box'" [loaderId]="'01'"></ngx-ui-loader>
-<div *ngIf="!(finalGame | async)" class="container">
-  <div class="city-card">
-    <div class="city-Name">City Name: {{this.curCityName}}</div>
-    <input type="number" [(ngModel)]="this.tempOfUser">
-    <button (click)="this.checkTemp()">{{check}}</button>
+<div class="container">
+  <div *ngIf="!(finalGame | async)">
+    <app-guessing-area></app-guessing-area>
+    <app-result></app-result>
   </div>
-  <div class="result-container">
-    <div *ngFor="let res of this.results" class="res" [ngClass]="res.correctAnswer ? 'correct' : 'fail'">
-      <div> Your temp: {{res.userTemp}} </div>
-      <div> Was temp: {{res.rightTemp}} </div>
-    </div>
-  </div>
-</div>
-<div *ngIf="(finalGame | async)">
-  <h3> Result: {{summerOfGame}}</h3>
+  <app-final-game *ngIf="(finalGame | async)"></app-final-game>
 </div>
 

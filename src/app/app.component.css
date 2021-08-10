@@ -1,36 +1,3 @@
-.city-card{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  justify-self: center;
-  align-content: center;
-  flex-direction: column;
-  width: 300px;
-  padding: 10px;
-  background: beige;
-  border-radius: 7px;
-}
-
-.fail {
-  color: red;
-}
-.correct {
-  color: green;
-}
-
-.res{
-  margin: 5px;
-  background-color: rgba(239, 239, 239, 0.44);
-  padding: 3px;
-  border-radius: 4px;
-}
-
-.result-container {
-  border-top: black 1px solid;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  margin-top: 100px;
+.container {
   width: 100%;
-
 }

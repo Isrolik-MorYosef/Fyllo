@@ -1,0 +1,7 @@
+<div class="result-container">
+  <div *ngFor="let res of (weatherGuess$ | async )" class="res" [ngClass]="res.correctAnswer ? 'correct' : 'fail'">
+    <h3><b> {{res.city}}</b></h3>
+    <div> Your temp: {{res.userTemp}} </div>
+    <div> Was temp: {{res.rightTemp}} </div>
+  </div>
+</div>

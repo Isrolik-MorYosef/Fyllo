@@ -1,0 +1,7 @@
+<div class="card">
+  <p>City Name: <b>{{curCityName}}</b></p>
+  <div style="display: flex">
+    <input class="inp" type="number" [placeholder]="'Guess the weather'" [(ngModel)]="tempOfUser">
+    <button class="btn" (click)="guessingHandling()">Check</button>
+  </div>
+</div>
