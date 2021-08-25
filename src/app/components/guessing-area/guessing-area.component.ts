@@ -12,7 +12,7 @@ import {take} from "rxjs/operators";
   styleUrls: ['./guessing-area.component.css']
 })
 export class GuessingAreaComponent implements OnInit {
-  citiesName = ['Hadera', 'Herzlia', 'Ashkelon', 'Ashdod', 'Yavne'];
+  citiesName: string[] = [];
   curCityName: string = '';
   tempOfUser: string = '';
   cityResult: any;
@@ -22,6 +22,7 @@ export class GuessingAreaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.citiesName = this.fetcherService.getRandomCities();
     this.store.pipe(select('guess'))
       .subscribe((guess: any) => {
         this.curCityName = this.citiesName[guess.indexOfGuess];

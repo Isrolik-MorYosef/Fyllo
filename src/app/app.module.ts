@@ -10,6 +10,7 @@ import {ResultComponent} from './components/result/result.component';
 import {FinalGameComponent} from './components/final-game/final-game.component';
 import {StoreModule} from "@ngrx/store";
 import {guessReducer} from "./store/guess.reducer";
+import {Cities} from "../assets/cities/cities";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,10 @@ import {guessReducer} from "./store/guess.reducer";
     HttpClientModule,
     StoreModule.forRoot({guess: guessReducer})
   ],
-  providers: [FetcherService],
+  providers: [
+    FetcherService,
+    Cities
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
