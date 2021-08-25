@@ -1,5 +1,8 @@
 # FylloInterview
 
+This is gusses game of interview exercise, the player need gusses the temperture of 5 randomal cities.
+success of 3 gusseses or more you are winner!
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
 ## Development server
